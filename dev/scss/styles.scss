@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+/*animation css*/
+@import "../../node_modules/animate.css/animate";
+/*bootstarp css*/
+@import "../../node_modules/bootstrap/scss/bootstrap";
+/*swiper slider css*/
+@import "../../node_modules/swiper/src/swiper";
+
+/*eanble if want swiper default pagination style*/
+@import "../../node_modules/swiper/src/components/pagination/pagination";
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+/*justified gallery css */
+@import "../../node_modules/justifiedGallery/dist/css/justifiedGallery";
+
+/*graps scss files imported here*/
+@import "reset";
+@import "navbar";
+@import "typography";
+@import "buttons";
+@import "slider";
+@import "grid-layout";
+@import "form-controls";
+@import "footer";
+@import "feature-box";
+@import "tabs";
+@import "background";
+@import "borders";
+
+// custome style

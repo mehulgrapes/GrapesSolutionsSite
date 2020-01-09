@@ -1,0 +1,30 @@
+// variables
+
+$basecolor: #ddd;
+
+$white: #fff;
+$black: #000;
+$green: #4dbb6d;
+$extra-light-gray: #e4e4e4;
+$green-light: rgba(77, 187, 109, 0.3);
+$medium-gray: #929292;
+$light-gray: #f6f8f9;
+$dark-gray: #292929;
+$matisse: #18638c;
+$matisse-dark: #1f2935;
+
+// plugin variables override
+$primary: #4dbb6d;
+$fa-font-path: "../fonts";
+$themeColor: #4dbb6d;
+$font-family-base: "Poppins";
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$small-device: 767px;
+$medium-device: 991px;
+$large-device: 1199px;

@@ -1,0 +1,53 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+section {
+  padding: 100px 0;
+  @include screen(small) {
+    padding: 45px 0;
+  }
+}
+section.small-section {
+  padding: 80px 0;
+  @include screen(small) {
+    padding: 30px 0;
+  }
+}
+section.big-section {
+  padding: 140px 0;
+  @include screen(small) {
+    padding: 55px 0;
+  }
+}
+p:last-of-type {
+  margin-bottom: 0;
+}
+footer {
+  position: relative;
+  overflow: hidden;
+}
+// background colors
+a,
+a:hover {
+  text-decoration: none;
+}
+a.text-underline,
+a.text-underline:hover {
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+}
+
+.main-block {
+  position: relative;
+  background-size: cover;
+  background-position: top left;
+}
+
+.w-md-100 {
+  @include screen(medium) {
+    width: 100% !important;
+  }
+}

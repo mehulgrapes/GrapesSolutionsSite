@@ -1,0 +1,265 @@
+// text size
+.text-extra-small {
+  font-size: 10px;
+}
+.text-small {
+  font-size: 12px;
+}
+.text-normal {
+  font-size: 14px;
+}
+.text-medium {
+  font-size: 16px;
+}
+.text-extra-medium {
+  font-size: 18px;
+}
+.text-large {
+  font-size: 20px;
+}
+
+.title-small {
+  font-size: 24px;
+}
+.title-medium {
+  font-size: 28px;
+}
+.title-large {
+  font-size: 36px;
+}
+.title-larger {
+  font-size: 56px;
+}
+.title-extra-large {
+  font-size: 72px;
+}
+
+// text colors
+.text-black {
+  color: $black;
+}
+.text-green {
+  color: $green;
+}
+.text-extra-light-gray {
+  color: $extra-light-gray;
+}
+.text-medium-gray {
+  color: $medium-gray;
+}
+.text-light-gray {
+  color: $light-gray;
+}
+.text-matisse {
+  color: $matisse;
+}
+.text-dark-gray {
+  color: $dark-gray;
+}
+
+// font weight
+.fw-light {
+  font-weight: $font-weight-light;
+}
+.fw-normal {
+  font-weight: $font-weight-normal;
+}
+.fw-medium {
+  font-weight: $font-weight-medium;
+}
+.fw-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+.fw-bold {
+  font-weight: $font-weight-bold;
+}
+
+.line-height-one {
+  line-height: 1;
+}
+.line-height-two {
+  line-height: 2;
+}
+.line-height-three {
+  line-height: 3;
+}
+.line-height-normal {
+  line-height: normal;
+}
+
+// title style
+.title-style-1 {
+  padding-left: 30px;
+  border-left: 8px solid $primary;
+}
+.title-style-2 {
+  padding-left: 15px;
+  border-left: 4px solid $dark-gray;
+}
+
+// list style
+.list-style-1 {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+  &.list-flex li {
+    display: flex;
+    align-items: center;
+    @include screen(small) {
+      flex-flow: column;
+      align-items: flex-start;
+      .separator {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  li {
+    & > i {
+      margin-right: 20px;
+    }
+    .list-count {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 45px;
+      vertical-align: middle;
+      color: #d3d3d3;
+      margin-right: 5%;
+    }
+    margin-bottom: 30px;
+  }
+}
+.list-style-2 {
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding-left: 290px;
+  padding-bottom: 100px;
+  background-size: 290px;
+  @include screen(medium) {
+    padding-left: 30%;
+    padding-bottom: 0;
+    background-size: 30%;
+    background-position: center left;
+  }
+  @include screen(small) {
+    padding-left: 1.3rem;
+    background-size: 0;
+    background-position: center left;
+  }
+  li {
+    margin-bottom: 30px;
+  }
+}
+.list-style-3 {
+  list-style: none;
+  li {
+    margin-bottom: 30px;
+    padding-left: 35px;
+    position: relative;
+    & > i {
+      font-size: 20px;
+      opacity: 0.6;
+      position: absolute;
+      top: 3px;
+      left: 0;
+    }
+  }
+}
+.list-style-4 {
+  background-color: #fff;
+  padding: 3rem 4rem;
+  list-style: none;
+  border-left: 5px solid;
+  border-radius: 8px;
+  @include screen(small) {
+    padding: 0.5rem 1.2rem;
+  }
+  &.list-flex li {
+    display: flex;
+  }
+  li {
+    padding: 25px 0;
+    border-bottom: 1px solid #efefef;
+    &:last-child {
+      border-bottom: 0;
+    }
+    i {
+      margin-right: 15px;
+      opacity: 0.6;
+    }
+  }
+}
+.list-style-5 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  .list-group-item {
+    padding-left: 0;
+    padding-right: 0;
+    width: 33.33%;
+    background: transparent;
+    display: inline-block;
+  }
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  .card-list-item {
+    padding: 0 1rem;
+    width: 20%;
+    max-width: 20%;
+  }
+  &.card-list-style-2 {
+    justify-content: flex-start;
+    .card-list-item {
+      padding: 0 1rem;
+      width: 33.33%;
+      max-width: 33.33%;
+      margin-bottom: 2rem;
+      .card-body {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        color: $black;
+        font-weight: 500;
+        @extend %common-transition;
+        .card-icon {
+          font-size: 3rem;
+          margin-right: 1.5rem;
+          color: $primary;
+        }
+      }
+      &:hover {
+        .card-body {
+          color: $white;
+          background-color: $primary;
+          @extend %common-transition;
+          .card-icon {
+            color: $white;
+            @extend %common-transition;
+          }
+        }
+      }
+    }
+  }
+  @include screen(large) {
+    .card-list-item {
+      max-width: 33.33%;
+      width: 33.33%;
+    }
+  }
+  @include screen(medium) {
+    .card-list-item {
+      max-width: 50%;
+      width: 50%;
+    }
+  }
+  @include screen(small) {
+    .card-list-item {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

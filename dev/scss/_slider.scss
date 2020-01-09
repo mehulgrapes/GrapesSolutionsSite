@@ -1,0 +1,140 @@
+/* slider style */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+// banner slider style
+.banner-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+// work slider
+.work-slider {
+  margin-bottom: 30px;
+  .slide-wrapper {
+    position: relative;
+    padding: 75px 0;
+    .work-detail {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 35%;
+      padding: 60px 40px;
+      @include screen(large) {
+        width: 50%;
+      }
+      @include screen(medium) {
+        width: 65%;
+      }
+      @include screen(small) {
+        width: 100%;
+        position: relative;
+      }
+    }
+  }
+}
+
+// slider pagination style
+.swiper-pagination-vertical {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  @include translateY(-50%);
+  @extend %common-transition;
+  z-index: 1;
+  &.pagination-style-1 {
+    .swiper-pagination-bullet {
+      display: block;
+      color: $white;
+      opacity: 1;
+      cursor: pointer;
+      width: auto;
+      height: auto;
+      outline: none;
+      background-color: transparent;
+      &.swiper-pagination-bullet-active {
+        color: $green;
+        &:after {
+          height: 60px;
+          @extend %common-transition;
+        }
+      }
+      &:after {
+        height: 0;
+        width: 1px;
+        background-color: $green;
+        display: block;
+        content: "";
+        margin: 0 auto;
+        @extend %common-transition;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+  &.pagination-style-2 {
+    text-align: right;
+    width: 86px;
+    right: 75px;
+    .swiper-pagination-bullet {
+      text-indent: 200px;
+      width: 50px;
+      height: 2px;
+      background-color: #fff;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      opacity: 1;
+      margin: 0 0 35px;
+      text-align: right;
+      display: inline-block;
+      @extend %common-transition;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.swiper-pagination-bullet-active {
+        width: 86px;
+        @extend %common-transition;
+      }
+    }
+  }
+}
+
+.tesimonials-slider {
+  padding-bottom: 40px;
+  .swiper-slide {
+    background-color: $green;
+    padding: 40px;
+    color: $white;
+    .blockquote-footer {
+      color: $light-gray;
+    }
+  }
+}
+
+.pagination-color-alt {
+  .swiper-pagination-bullet {
+    background-color: $green;
+    opacity: 1;
+    border: 1px solid $green;
+    @extend %common-transition;
+    &.swiper-pagination-bullet-active {
+      background-color: transparent;
+      @extend %common-transition;
+    }
+  }
+}
+
+// square paginations
+.swiper-pagination-square {
+  .swiper-pagination-bullet {
+    height: 3px;
+    width: 25px;
+    content: "";
+    display: inline-block;
+    border-radius: 0;
+  }
+}

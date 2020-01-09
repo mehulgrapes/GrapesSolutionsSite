@@ -1,0 +1,237 @@
+//media query
+@mixin screen($device) {
+  @if $device == small {
+    @media only screen and (max-width: $small-device) {
+      @content;
+    }
+  } @else if $device == medium {
+    @media only screen and (max-width: $medium-device) {
+      @content;
+    }
+  } @else if $device == large {
+    @media only screen and (max-width: $large-device) {
+      @content;
+    }
+  }
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin translate($value1, $value2) {
+  -webkit-transform: translate($value1, $value2);
+  -moz-transform: translate($value1, $value2);
+  -ms-transform: translate($value1, $value2);
+  -o-transform: translate($value1, $value2);
+  transform: translate($value1, $value2);
+}
+
+@mixin translateY($value) {
+  -webkit-transform: translateY($value);
+  -moz-transform: translateY($value);
+  -ms-transform: translateY($value);
+  -o-transform: translateY($value);
+  transform: translateY($value);
+}
+
+@mixin translateX($value) {
+  -webkit-transform: translateX($value);
+  -moz-transform: translateX($value);
+  -ms-transform: translateX($value);
+  -o-transform: translateX($value);
+  transform: translateX($value);
+}
+
+//extends
+%common-transition {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+// functions
+/*magin & padding*/
+@for $i from 1 through 20 {
+  //padding
+  $pxval: $i * 5;
+  .pl-#{ $pxval }px,
+  .px-#{ $pxval }px {
+    padding-left: #{$pxval}px;
+  }
+  .pr-#{ $pxval }px,
+  .px-#{ $pxval }px {
+    padding-right: #{$pxval}px;
+  }
+  .pt-#{ $pxval }px,
+  .py-#{ $pxval }px {
+    padding-top: #{$pxval}px;
+  }
+  .pb-#{ $pxval }px,
+  .py-#{ $pxval }px {
+    padding-bottom: #{$pxval}px;
+  }
+
+  //margin
+  .ml-#{ $pxval }px,
+  .mx-#{ $pxval }px {
+    margin-left: #{$pxval}px;
+  }
+  .mr-#{ $pxval }px,
+  .mx-#{ $pxval }px {
+    margin-right: #{$pxval}px;
+  }
+  .mt-#{ $pxval }px,
+  .my-#{ $pxval }px {
+    margin-top: #{$pxval}px;
+  }
+  .mb-#{ $pxval }px,
+  .my-#{ $pxval }px {
+    margin-bottom: #{$pxval}px;
+  }
+}
+/*responsive class generate for large device*/
+@for $i from 1 through 20 {
+  @include screen(large) {
+    //padding
+    $pxval: $i * 5;
+    .pl-lg-#{ $pxval }px,
+    .px-lg-#{ $pxval }px {
+      padding-left: #{$pxval}px !important;
+    }
+    .pr-lg-#{ $pxval }px,
+    .px-lg-#{ $pxval }px {
+      padding-right: #{$pxval}px !important;
+    }
+    .pt-lg-#{ $pxval }px,
+    .py-lg-#{ $pxval }px {
+      padding-top: #{$pxval}px !important;
+    }
+    .pb-lg-#{ $pxval }px,
+    .py-lg-#{ $pxval }px {
+      padding-bottom: #{$pxval}px !important;
+    }
+
+    //margin
+    .ml-lg-#{ $pxval }px,
+    .mx-lg-#{ $pxval }px {
+      margin-left: #{$pxval}px !important;
+    }
+    .mr-lg-#{ $pxval }px,
+    .mx-lg-#{ $pxval }px {
+      margin-right: #{$pxval}px !important;
+    }
+    .mt-lg-#{ $pxval }px,
+    .my-lg-#{ $pxval }px {
+      margin-top: #{$pxval}px !important;
+    }
+    .mb-lg-#{ $pxval }px,
+    .my-lg-#{ $pxval }px {
+      margin-bottom: #{$pxval}px !important;
+    }
+  }
+}
+/*responsive class generate for medium device*/
+@for $i from 1 through 20 {
+  @include screen(medium) {
+    //padding
+    $pxval: $i * 5;
+    .pl-md-#{ $pxval }px,
+    .px-md-#{ $pxval }px {
+      padding-left: #{$pxval}px !important;
+    }
+    .pr-md-#{ $pxval }px,
+    .px-md-#{ $pxval }px {
+      padding-right: #{$pxval}px !important;
+    }
+    .pt-md-#{ $pxval }px,
+    .py-md-#{ $pxval }px {
+      padding-top: #{$pxval}px !important;
+    }
+    .pb-md-#{ $pxval }px,
+    .py-md-#{ $pxval }px {
+      padding-bottom: #{$pxval}px !important;
+    }
+
+    //margin
+    .ml-md-#{ $pxval }px,
+    .mx-md-#{ $pxval }px {
+      margin-left: #{$pxval}px !important;
+    }
+    .mr-md-#{ $pxval }px,
+    .mx-md-#{ $pxval }px {
+      margin-right: #{$pxval}px !important;
+    }
+    .mt-md-#{ $pxval }px,
+    .my-md-#{ $pxval }px {
+      margin-top: #{$pxval}px !important;
+    }
+    .mb-md-#{ $pxval }px,
+    .my-md-#{ $pxval }px {
+      margin-bottom: #{$pxval}px !important;
+    }
+  }
+}
+/*responsive class generate for small devices*/
+@for $i from 1 through 20 {
+  @include screen(small) {
+    //padding
+    $pxval: $i * 5;
+    .pl-sm-#{ $pxval }px,
+    .px-sm-#{ $pxval }px {
+      padding-left: #{$pxval}px !important;
+    }
+    .pr-sm-#{ $pxval }px,
+    .px-sm-#{ $pxval }px {
+      padding-right: #{$pxval}px !important;
+    }
+    .pt-sm-#{ $pxval }px,
+    .py-sm-#{ $pxval }px {
+      padding-top: #{$pxval}px !important;
+    }
+    .pb-sm-#{ $pxval }px,
+    .py-sm-#{ $pxval }px {
+      padding-bottom: #{$pxval}px !important;
+    }
+
+    //margin
+    .ml-sm-#{ $pxval }px,
+    .mx-sm-#{ $pxval }px {
+      margin-left: #{$pxval}px !important;
+    }
+    .mr-sm-#{ $pxval }px,
+    .mx-sm-#{ $pxval }px {
+      margin-right: #{$pxval}px !important;
+    }
+    .mt-sm-#{ $pxval }px,
+    .my-sm-#{ $pxval }px {
+      margin-top: #{$pxval}px !important;
+    }
+    .mb-sm-#{ $pxval }px,
+    .my-sm-#{ $pxval }px {
+      margin-bottom: #{$pxval}px !important;
+    }
+  }
+}
+
+//width
+@for $i from 1 through 20 {
+  $widthVal: $i * 5;
+  .w-#{ $widthVal } {
+    width: percentage($i/20);
+  }
+}
+
+//height
+@for $i from 1 through 20 {
+  $heightVal: $i * 50;
+  .mh-#{ $heightVal } {
+    min-height: #{$heightVal}px;
+  }
+}
