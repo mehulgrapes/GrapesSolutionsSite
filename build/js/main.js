@@ -118,7 +118,9 @@ $(document).ready(function() {
     slidesPerView: 1,
     pagination: {
       el: ".work-slider-pagination",
-      clickable: true
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 3
     },
     loop: true,
     autoplay: {
@@ -192,3 +194,30 @@ function init_scroll_navigate() {
     $("header").removeClass("header-appear");
   }
 }
+
+// test code language translate
+$(document).on("click", ".language-link", function(e) {
+  e.preventDefault();
+  let language = $(this).attr("data-language");
+  $("html").attr("lang", language);
+});
+
+let lang = {
+  en: {
+    copy: "All Rights Reserved."
+  },
+  es: {
+    copy: "Todos los derechos reservados."
+  }
+};
+
+$(document).ready(function() {
+  if (window.location.hash) {
+    if (window.location.hash == "#en") {
+      $(".gs-lang").text(lang.en.copy);
+    }
+    if (window.location.hash == "#es") {
+      $(".gs-lang").text(lang.es.copy);
+    }
+  }
+});
