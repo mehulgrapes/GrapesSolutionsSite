@@ -195,6 +195,45 @@ function init_scroll_navigate() {
   }
 }
 
+// form submition mailer code
+
+$(function() {
+  $("#frmContact").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      },
+      mobile_no: {
+        required: true
+      },
+      subject: {
+        required: true
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      mobile_no: "Please enter your Mobile Number",
+      email: "Please enter a valid email address"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "contact-us.php",
+        data: $(form).serialize(),
+        success: function(response) {
+          if (response == "success") {
+            $("#messages").html(
+              "<div class='msg'>Thank you for contacting us! We will get back to you soon.</div>"
+            );
+          }
+        }
+      });
+      return false; // required to block normal submit since you used ajax
+    }
+  });
+});
+
 // test code language translate
 $(document).on("click", ".language-link", function(e) {
   e.preventDefault();
