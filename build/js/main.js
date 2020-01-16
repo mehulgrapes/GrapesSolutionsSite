@@ -200,6 +200,9 @@ function init_scroll_navigate() {
 $(function() {
   $("#frmContact").validate({
     rules: {
+      name: {
+        required: true
+      },
       email: {
         required: true,
         email: true
@@ -213,8 +216,10 @@ $(function() {
     },
     // Specify validation error messages
     messages: {
+      name: "Please enter your Name",
       mobile_no: "Please enter your Mobile Number",
-      email: "Please enter a valid email address"
+      email: "Please enter a valid Email Address",
+      subject: "Please enter Subject"
     },
     submitHandler: function(form) {
       $.ajax({
