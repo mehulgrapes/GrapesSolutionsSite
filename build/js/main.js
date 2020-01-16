@@ -141,7 +141,7 @@ $(document).ready(function() {
   $(document).imagesLoaded(function() {
     if ($(".justified-gallery").length > 0) {
       $(".justified-gallery").justifiedGallery({
-        rowHeight: 250,
+        rowHeight: 350,
         maxRowHeight: false,
         captions: true,
         margins: 20,
